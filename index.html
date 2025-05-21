@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andrej Kincel | Principal Software Engineer</title>
+    <title>Andrej Kincel | Staff+ Engineering Lead</title>
     <style>
         :root {
             --primary: #0a192f;
@@ -12,22 +12,22 @@
             --text-secondary: #8892b0;
             --highlight: #f06449;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
-        
+
         body {
             background-color: var(--primary);
             color: var(--text);
             line-height: 1.6;
         }
-        
+
         header {
-            padding: 2rem;
+            padding: 1.5rem;
             position: fixed;
             top: 0;
             left: 0;
@@ -37,7 +37,7 @@
             backdrop-filter: blur(10px);
             box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
         }
-        
+
         nav {
             display: flex;
             justify-content: flex-end;
@@ -45,16 +45,16 @@
             max-width: 1200px;
             margin: 0 auto;
         }
-        
+
         nav ul {
             display: flex;
             list-style: none;
         }
-        
+
         nav ul li {
             margin-left: 2rem;
         }
-        
+
         nav ul li a {
             color: var(--text);
             text-decoration: none;
@@ -63,11 +63,11 @@
             transition: color 0.3s ease;
             position: relative;
         }
-        
+
         nav ul li a:hover {
             color: var(--secondary);
         }
-        
+
         nav ul li a::after {
             content: '';
             position: absolute;
@@ -78,81 +78,81 @@
             background-color: var(--secondary);
             transition: width 0.3s ease;
         }
-        
+
         nav ul li a:hover::after {
             width: 100%;
         }
-        
+
         main {
             max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
             padding-top: 100px;
         }
-        
+
         section {
             margin-bottom: 5rem;
         }
-        
+
         h1 {
             font-size: 4rem;
             margin-bottom: 1rem;
             font-weight: 700;
             letter-spacing: -1px;
         }
-        
+
         h2 {
             font-size: 2.5rem;
             margin-bottom: 2rem;
             color: var(--text-secondary);
             font-weight: 600;
         }
-        
+
         h3 {
             font-size: 1.8rem;
             margin-bottom: 1rem;
             color: var(--text);
             font-weight: 600;
         }
-        
+
         h4 {
             font-size: 1.2rem;
             margin-bottom: 0.5rem;
             color: var(--secondary);
             font-weight: 500;
         }
-        
+
         p {
             font-size: 1.1rem;
             margin-bottom: 1rem;
             color: var(--text-secondary);
         }
-        
+
         .highlight {
             color: var(--secondary);
         }
-        
+
         .hero {
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
-        
+
         .hero-content {
             max-width: 800px;
         }
-        
+
         .hero p {
             font-size: 1.5rem;
             margin-bottom: 2rem;
         }
-        
+
         .contact-links {
             display: flex;
             margin-top: 2rem;
         }
-        
+
         .contact-links a {
             display: inline-block;
             margin-right: 2rem;
@@ -165,13 +165,13 @@
             font-weight: 500;
             transition: all 0.3s ease;
         }
-        
+
         .contact-links a:hover {
             background-color: rgba(100, 255, 218, 0.1);
             color: var(--secondary);
             transform: translateY(-3px);
         }
-        
+
         .company {
             margin-bottom: 3rem;
             position: relative;
@@ -179,58 +179,58 @@
             border-left: 2px solid var(--text-secondary);
             padding-bottom: 20px;
         }
-        
+
         .company:last-child {
             margin-bottom: 0;
         }
-        
+
         .company-header {
             display: flex;
             justify-content: space-between;
             margin-bottom: 1rem;
             flex-wrap: wrap;
         }
-        
+
         .company-title {
             font-weight: 600;
             color: var(--text);
             font-size: 1.2rem;
         }
-        
+
         .company-date {
             color: var(--text-secondary);
             font-size: 0.9rem;
         }
-        
+
         .company-description {
             margin-bottom: 1rem;
         }
-        
+
         .company-details ul {
             list-style-type: none;
             margin-bottom: 1rem;
         }
-        
+
         .company-details ul li {
             position: relative;
             padding-left: 25px;
             margin-bottom: 10px;
             color: var(--text-secondary);
         }
-        
+
         .company-details ul li::before {
             content: '▹';
             position: absolute;
             left: 0;
             color: var(--secondary);
         }
-        
+
         .skills {
             display: flex;
             flex-wrap: wrap;
             margin-top: 2rem;
         }
-        
+
         .skill {
             background-color: rgba(100, 255, 218, 0.1);
             color: var(--secondary);
@@ -241,57 +241,57 @@
             font-size: 0.9rem;
             transition: all 0.3s ease;
         }
-        
+
         .skill:hover {
             transform: translateY(-3px);
             background-color: rgba(100, 255, 218, 0.2);
         }
-        
+
         .languages {
             display: flex;
             flex-wrap: wrap;
             margin-top: 1rem;
         }
-        
+
         .language {
             margin-right: 2rem;
             margin-bottom: 1rem;
         }
-        
+
         .language span {
             font-size: 0.9rem;
             color: var(--secondary);
         }
-        
+
         footer {
             text-align: center;
             padding: 2rem;
             color: var(--text-secondary);
             font-size: 0.9rem;
         }
-        
+
         @media (max-width: 768px) {
             h1 {
                 font-size: 2.5rem;
             }
-            
+
             h2 {
                 font-size: 2rem;
             }
-            
+
             .hero p {
                 font-size: 1.2rem;
             }
-            
+
             nav ul li {
                 margin-left: 1rem;
             }
-            
+
             .company-header {
                 flex-direction: column;
             }
         }
-        
+
         /* Subtle animation for page elements */
         @keyframes fadeIn {
             from {
@@ -303,19 +303,19 @@
                 transform: translateY(0);
             }
         }
-        
+
         section {
             animation: fadeIn 0.8s ease forwards;
         }
-        
+
         section:nth-child(2) {
             animation-delay: 0.2s;
         }
-        
+
         section:nth-child(3) {
             animation-delay: 0.4s;
         }
-        
+
         section:nth-child(4) {
             animation-delay: 0.6s;
         }
@@ -333,11 +333,11 @@
             </ul>
         </nav>
     </header>
-    
+
     <main>
         <section class="hero" id="about">
             <div class="hero-content">
-                <h1>Hi, I'm <span class="highlight">Andrej Kincel</span></h1>
+                <h1>Hi, I'm <span class="highlight">Andrej&nbsp;Kincel</span></h1>
                 <h2>Staff+ Engineering Lead of Global eCommerce Teams</h2>
                 <p>
                     Tech and people lead of globally distributed engineering teams in the eCommerce domain, building highly available, fault-tolerant systems that process millions of transactions with exceptional throughput.
@@ -349,10 +349,10 @@
                 </div>
             </div>
         </section>
-        
+
         <section id="experience">
             <h3>Where I've Worked</h3>
-            
+
             <div class="company">
                 <div class="company-header">
                     <div class="company-title">Principal Software Engineer @ Cimpress</div>
@@ -371,7 +371,7 @@
                     </ul>
                 </div>
             </div>
-            
+
             <div class="company">
                 <div class="company-header">
                     <div class="company-title">Lead Software Engineer @ Cimpress</div>
@@ -393,7 +393,7 @@
                     </ul>
                 </div>
             </div>
-            
+
             <div class="company">
                 <div class="company-header">
                     <div class="company-title">Software Engineer @ Zalando Payments SE & Co. KG</div>
@@ -410,10 +410,10 @@
                 </div>
             </div>
         </section>
-        
+
         <section id="skills">
             <h3>Skills & Technologies</h3>
-            
+
             <div class="skills">
                 <div class="skill">Amazon Web Services (AWS)</div>
                 <div class="skill">TypeScript</div>
@@ -446,7 +446,7 @@
                 <div class="skill">Agile Methodologies</div>
                 <div class="skill">Team Leadership</div>
             </div>
-            
+
             <h4>Languages</h4>
             <div class="languages">
                 <div class="language">
@@ -463,10 +463,10 @@
                 </div>
             </div>
         </section>
-        
+
         <section id="education">
             <h3>Education</h3>
-            
+
             <div class="company">
                 <div class="company-header">
                     <div class="company-title">Faculty of Informatics and Information Technologies, Slovak University of Technology</div>
@@ -476,14 +476,14 @@
                     <p>Master's Degree in Computer Systems and Networking</p>
                 </div>
             </div>
-            
+
             <h4>Certifications</h4>
             <div class="company-details">
                 <ul>
                     <li>edX Honor Code Certificate for Introduction to Linux</li>
                 </ul>
             </div>
-            
+
             <h4>Publications</h4>
             <div class="company-details">
                 <ul>
@@ -492,7 +492,7 @@
                 </ul>
             </div>
         </section>
-        
+
         <section id="contact">
             <h3>Get In Touch</h3>
             <p>I'm always interested in connecting with fellow professionals to discuss software engineering leadership, cloud architecture, and innovations in the tech industry.</p>
@@ -502,7 +502,7 @@
             </div>
         </section>
     </main>
-    
+
     <footer>
         <p>© 2025 Andrej Kincel. All Rights Reserved.</p>
     </footer>
