@@ -1,1 +1,510 @@
-Hello human!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrej Kincel | Principal Software Engineer</title>
+    <style>
+        :root {
+            --primary: #0a192f;
+            --secondary: #64ffda;
+            --text: #ccd6f6;
+            --text-secondary: #8892b0;
+            --highlight: #f06449;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        body {
+            background-color: var(--primary);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        header {
+            padding: 2rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background-color: rgba(10, 25, 47, 0.9);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 2rem;
+        }
+        
+        nav ul li a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary);
+            transition: width 0.3s ease;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            padding-top: 100px;
+        }
+        
+        section {
+            margin-bottom: 5rem;
+        }
+        
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+            font-weight: 600;
+        }
+        
+        h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+            font-weight: 500;
+        }
+        
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+        
+        .highlight {
+            color: var(--secondary);
+        }
+        
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-links {
+            display: flex;
+            margin-top: 2rem;
+        }
+        
+        .contact-links a {
+            display: inline-block;
+            margin-right: 2rem;
+            color: var(--text);
+            text-decoration: none;
+            border: 1px solid var(--secondary);
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            font-size: 1.2rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-links a:hover {
+            background-color: rgba(100, 255, 218, 0.1);
+            color: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        .company {
+            margin-bottom: 3rem;
+            position: relative;
+            padding-left: 20px;
+            border-left: 2px solid var(--text-secondary);
+            padding-bottom: 20px;
+        }
+        
+        .company:last-child {
+            margin-bottom: 0;
+        }
+        
+        .company-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .company-title {
+            font-weight: 600;
+            color: var(--text);
+            font-size: 1.2rem;
+        }
+        
+        .company-date {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        .company-description {
+            margin-bottom: 1rem;
+        }
+        
+        .company-details ul {
+            list-style-type: none;
+            margin-bottom: 1rem;
+        }
+        
+        .company-details ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+            color: var(--text-secondary);
+        }
+        
+        .company-details ul li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .skill {
+            background-color: rgba(100, 255, 218, 0.1);
+            color: var(--secondary);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .skill:hover {
+            transform: translateY(-3px);
+            background-color: rgba(100, 255, 218, 0.2);
+        }
+        
+        .languages {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+        
+        .language {
+            margin-right: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .language span {
+            font-size: 0.9rem;
+            color: var(--secondary);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            nav ul li {
+                margin-left: 1rem;
+            }
+            
+            .company-header {
+                flex-direction: column;
+            }
+        }
+        
+        /* Subtle animation for page elements */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        section {
+            animation: fadeIn 0.8s ease forwards;
+        }
+        
+        section:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        
+        section:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        
+        section:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="hero" id="about">
+            <div class="hero-content">
+                <h1>Hi, I'm <span class="highlight">Andrej Kincel</span></h1>
+                <h2>Staff+ Engineering Lead of Global eCommerce Teams</h2>
+                <p>
+                    Tech and people lead of globally distributed engineering teams in the eCommerce domain, building highly available, fault-tolerant systems that process millions of transactions with exceptional throughput.
+                    Expert in RESTful microservices with TypeScript/Node.js and C#/.NET core, AWS cloud services, and serverless architecture.
+                </p>
+                <div class="contact-links">
+                    <a href="mailto:andrej.kincel@gmail.com">Get In Touch</a>
+                    <a href="https://www.linkedin.com/in/akincel" target="_blank">LinkedIn Profile</a>
+                </div>
+            </div>
+        </section>
+        
+        <section id="experience">
+            <h3>Where I've Worked</h3>
+            
+            <div class="company">
+                <div class="company-header">
+                    <div class="company-title">Principal Software Engineer @ Cimpress</div>
+                    <div class="company-date">July 2023 - Present</div>
+                </div>
+                <div class="company-description">
+                    <p>Engineering Lead for global platform teams building and scaling eCommerce Website and Wholesale Pricing systems. I own technical direction, architecture, and engineering quality across distributed teams working in a modern, API-first, serverless environment on AWS.</p>
+                </div>
+                <div class="company-details">
+                    <ul>
+                        <li>Leading architectural design and modernization efforts, with an emphasis on event-driven, scalable, and maintainable systems aligned across multiple product teams</li>
+                        <li>Collaborating closely with Product, UX, and Engineering Management to turn complex business needs into robust, performant technical solutions</li>
+                        <li>Driving engineering best practices, including code quality, CI/CD workflows, performance tuning, and AWS cost optimization</li>
+                        <li>Mentoring engineers and supporting their growth through technical coaching, feedback, and structured promotion processes</li>
+                        <li>Guiding system evolution through thoughtful adoption of new technologies and proactive handling of non-functional requirements like scalability, reliability, and availability</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="company">
+                <div class="company-header">
+                    <div class="company-title">Lead Software Engineer @ Cimpress</div>
+                    <div class="company-date">August 2017 - July 2023</div>
+                </div>
+                <div class="company-description">
+                    <p>I led cross-functional software engineering teams in the fulfillment, pricing, and invoicing areas.</p>
+                </div>
+                <div class="company-details">
+                    <ul>
+                        <li>Acted as a people manager, coached team members, led performance reviews, 360 feedback sessions, hiring, technical and behavioral interviews</li>
+                        <li>Collaborated with product managers, UX researchers, and team leads in fully-remote settings across time-zones</li>
+                        <li>Prepared and held technical demos, presentations to customers, and knowledge sharing sessions</li>
+                        <li>Designed and implemented microservices utilizing serverless architecture (AWS Lambda, Fargate) and asynchronous event-processing (AWS SNS, SQS, Step Functions)</li>
+                        <li>Optimized the response time, availability, and security of RESTful HTTP APIs (AWS CloudFront, ApiGateway, WAF)</li>
+                        <li>Used SQL (PostgreSQL) and NoSQL (DynamoDB, ElasticSearch) databases and built transformation pipelines for data products (DBT, Snowflake)</li>
+                        <li>Built frontend web applications using Vue.js and React.js</li>
+                        <li>Managed deployment stories (GitLab, GitHub actions) and wrote Infrastructure as Code (CloudFormation)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="company">
+                <div class="company-header">
+                    <div class="company-title">Software Engineer @ Zalando Payments SE & Co. KG</div>
+                    <div class="company-date">November 2015 - July 2017</div>
+                </div>
+                <div class="company-description">
+                    <p>I worked on a payment processing product (credit card, invoice, cash on delivery). I was focused on the steering part deciding when a payment should be executed, keeping simple accounting, calculating payment balances, and performing reconciliation with payment gateways.</p>
+                </div>
+                <div class="company-details">
+                    <ul>
+                        <li>Built scalable microservices in Java and Spring boot deployed to AWS ECS backed by EC2</li>
+                        <li>Run and monitored self-managed Cassandra cluster</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section id="skills">
+            <h3>Skills & Technologies</h3>
+            
+            <div class="skills">
+                <div class="skill">Amazon Web Services (AWS)</div>
+                <div class="skill">TypeScript</div>
+                <div class="skill">Node.js</div>
+                <div class="skill">C#</div>
+                <div class="skill">.NET Core</div>
+                <div class="skill">Serverless Architecture</div>
+                <div class="skill">RESTful APIs</div>
+                <div class="skill">Microservices</div>
+                <div class="skill">Event-driven Architecture</div>
+                <div class="skill">AWS Lambda</div>
+                <div class="skill">AWS Fargate</div>
+                <div class="skill">AWS SNS/SQS</div>
+                <div class="skill">AWS Step Functions</div>
+                <div class="skill">AWS CloudFront</div>
+                <div class="skill">AWS ApiGateway</div>
+                <div class="skill">AWS WAF</div>
+                <div class="skill">PostgreSQL</div>
+                <div class="skill">DynamoDB</div>
+                <div class="skill">ElasticSearch</div>
+                <div class="skill">Snowflake</div>
+                <div class="skill">Vue.js</div>
+                <div class="skill">React.js</div>
+                <div class="skill">GitLab</div>
+                <div class="skill">GitHub Actions</div>
+                <div class="skill">CloudFormation</div>
+                <div class="skill">Java</div>
+                <div class="skill">Spring Boot</div>
+                <div class="skill">Cassandra</div>
+                <div class="skill">Agile Methodologies</div>
+                <div class="skill">Team Leadership</div>
+            </div>
+            
+            <h4>Languages</h4>
+            <div class="languages">
+                <div class="language">
+                    <p>English <span>(Full Professional)</span></p>
+                </div>
+                <div class="language">
+                    <p>Slovak <span>(Native or Bilingual)</span></p>
+                </div>
+                <div class="language">
+                    <p>Czech <span>(Full Professional)</span></p>
+                </div>
+                <div class="language">
+                    <p>German <span>(Limited Working)</span></p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="education">
+            <h3>Education</h3>
+            
+            <div class="company">
+                <div class="company-header">
+                    <div class="company-title">Faculty of Informatics and Information Technologies, Slovak University of Technology</div>
+                    <div class="company-date">2009 - 2014</div>
+                </div>
+                <div class="company-description">
+                    <p>Master's Degree in Computer Systems and Networking</p>
+                </div>
+            </div>
+            
+            <h4>Certifications</h4>
+            <div class="company-details">
+                <ul>
+                    <li>edX Honor Code Certificate for Introduction to Linux</li>
+                </ul>
+            </div>
+            
+            <h4>Publications</h4>
+            <div class="company-details">
+                <ul>
+                    <li>MBIST for LEON3 processor core cache</li>
+                    <li>Case study: BISR for a Processor Multiplier</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="contact">
+            <h3>Get In Touch</h3>
+            <p>I'm always interested in connecting with fellow professionals to discuss software engineering leadership, cloud architecture, and innovations in the tech industry.</p>
+            <div class="contact-links">
+                <a href="mailto:andrej.kincel@gmail.com">Email Me</a>
+                <a href="https://www.linkedin.com/in/akincel" target="_blank">LinkedIn Profile</a>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>© 2025 Andrej Kincel. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
